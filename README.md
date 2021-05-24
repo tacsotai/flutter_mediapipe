@@ -9,10 +9,7 @@ Currently, it runs on below devices with "OK".
 
 ## Android
 
-There are Mediapipe Manual Build to comlete this plugin to run. 
-```
-This plugin is **not** include jniLib because of package size for flutter publish.
-```
+There are Mediapipe Manual Build for Android flutter plugin.
 
 There are [mobile_calculators](https://github.com/google/mediapipe/search?q=mobile_calculators) list to run on Mobile.
 
@@ -66,8 +63,8 @@ mediapipe_aar(
 ### Build
 - Java Library
 ```
-bazel build -c opt --host_crosstool_top=@bazel_tools//tools/cpp:toolchain --fat_apk_cpu=arm64-v8a,armeabi-v7a --strip=ALWAYS //mediapipe/examples/android/src/java/com/google/mediapipe/apps/flutter_mediapipe:BUILD
-bazel build -c opt --host_crosstool_top=@bazel_tools//tools/cpp:toolchain --fat_apk_cpu=arm64-v8a,armeabi-v7a //mediapipe/examples/android/src/java/com/google/mediapipe/apps/flutter_mediapipe:flutter_mediapipe
+bazel build -c opt --host_crosstool_top=@bazel_tools//tools/cpp:toolchain --fat_apk_cpu=arm64-v8a,armeabi-v7a --strip=ALWAYS //mediapipe/examples/android/src/java/com/google/mediapipe/apps/flutter_mediapipe:BUILD --linkopt="-s"
+bazel build -c opt --host_crosstool_top=@bazel_tools//tools/cpp:toolchain --fat_apk_cpu=arm64-v8a,armeabi-v7a //mediapipe/examples/android/src/java/com/google/mediapipe/apps/flutter_mediapipe:flutter_mediapipe --linkopt="-s"
 ```
 - binary graph
 ```
@@ -84,8 +81,6 @@ mkdir flutter_mediapipe/android/src
 mkdir flutter_mediapipe/android/src/main
 mkdir flutter_mediapipe/android/src/main/assets
 mkdir flutter_mediapipe/android/src/main/jniLibs
-mkdir flutter_mediapipe/android/src/main/jniLibs/arm64-v8a
-mkdir flutter_mediapipe/android/src/main/jniLibs/armeabi-v7a
 mkdir flutter_mediapipe/protos
 ```
 
@@ -106,11 +101,12 @@ cp bazel-out/k8-opt/bin/mediapipe/graphs/face_mesh/face_mesh_mobile_gpu.binarypb
 ### jniLibs
 
 ```
-cp bazel-out/android-arm64-v8a-opt/bin/_solib_arm64-v8a/_U@android_Uopencv_S_S_Clibopencv_Uarm64-v8a___Uandroid_Uopencv_Ssdk_Snative_Slibs_Sarm64-v8a/libopencv_java3.so flutter_mediapipe/android/src/main/jniLibs/arm64-v8a
-cp bazel-out/android-arm64-v8a-opt/bin/mediapipe/examples/android/src/java/com/google/mediapipe/apps/flutter_mediapipe/libmediapipe_jni.so flutter_mediapipe/android/src/main/jniLibs/arm64-v8a
-cp bazel-out/android-armeabi-v7a-opt/bin/_solib_armeabi-v7a/_U@android_Uopencv_S_S_Clibopencv_Uarmeabi-v7a___Uandroid_Uopencv_Ssdk_Snative_Slibs_Sarmeabi-v7a/libopencv_java3.so flutter_mediapipe/android/src/main/jniLibs/armeabi-v7a
-cp bazel-out/android-armeabi-v7a-opt/bin/mediapipe/examples/android/src/java/com/google/mediapipe/apps/flutter_mediapipe/libmediapipe_jni.so flutter_mediapipe/android/src/main/jniLibs/armeabi-v7a
-
+mkdir work
+cp bazel-bin/mediapipe/examples/android/src/java/com/google/mediapipe/apps/flutter_mediapipe/flutter_mediapipe.aar work/aar.zip
+cd work/
+unzip aar.zip
+cd ..
+cp -r work/jni/* flutter_mediapipe/android/src/main/jniLibs/
 ```
 ### protos
 
@@ -138,10 +134,16 @@ unzip flutter_mediapipe.zip
 
 Then copy "flutter_mediapipe" to flutter plugin projects.
 
+### [APK](https://flutter.dev/docs/deployment/android#build-an-apk)
+```
+flutter build apk --split-per-abi
+```
+
 ### Refferences
 - [sample plugin](https://github.com/zhouzaihang/flutter_hand_tracking_plugin) is useful.
 - [sample android app without flutter](https://github.com/jiuqiant/mediapipe_multi_hands_tracking_aar_example) 
 - [Flutter don't support local AAR](https://github.com/decodedhealth/flutter_zoom_plugin/issues/53)
+- [jniLibs size down](https://github.com/google/mediapipe/issues/77)
 
 
 ## iOS
