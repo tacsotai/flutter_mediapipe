@@ -9,3 +9,7 @@
 ## 0.0.3
 
 * Modify sample print for coordinate.
+
+## 0.0.4
+
+* Hide rectangles and landmarks.
