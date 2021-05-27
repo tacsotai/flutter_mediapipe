@@ -31,6 +31,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _onLandMarkStream(NormalizedLandmarkList landmarkList) {
-    print(landmarkList.landmark);
+    landmarkList.landmark.asMap().forEach((int i, NormalizedLandmark value) {
+      print('Index: $i \n' + '$value');
+    });
   }
 }
