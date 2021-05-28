@@ -59,27 +59,7 @@ mediapipe_aar(
     calculators = ["//mediapipe/graphs/face_mesh:mobile_calculators"],
 )
 ```
-### Graph (If need)
-When editing graphs or subgraphs, [Build](###Build) again. 
-- graphs: _binary graph_
-- subgraphs: _jniLibs_
 
-
-```
-vi mediapipe/graphs/face_mesh/subgraphs/face_renderer_gpu.pbtxt
-```
-It is a sample to comment out of lines from 92 to 94 for hiding rectangles and landmarks.
-```
-# Draws annotations and overlays them on top of the input images.
-node {
-  calculator: "AnnotationOverlayCalculator"
-  input_stream: "IMAGE_GPU:input_image"
-#  input_stream: "detections_render_data"
-#  input_stream: "VECTOR:0:multi_face_landmarks_render_data"
-#  input_stream: "rects_render_data"
-  output_stream: "IMAGE_GPU:output_image"
-}
-```
 ### Build
 - jniLibs
 ```
@@ -168,3 +148,28 @@ flutter build apk --split-per-abi
 
 ## iOS
 Not implemented. Help me to develop.
+
+
+## Custormize mediapipe
+
+### Graph
+When editing graphs or subgraphs, [Build](###Build) again. 
+- graphs: _binary graph_
+- subgraphs: _jniLibs_
+
+
+```
+vi mediapipe/graphs/face_mesh/subgraphs/face_renderer_gpu.pbtxt
+```
+It is a sample to comment out of lines from 92 to 94 for hiding rectangles and landmarks.
+```
+# Draws annotations and overlays them on top of the input images.
+node {
+  calculator: "AnnotationOverlayCalculator"
+  input_stream: "IMAGE_GPU:input_image"
+#  input_stream: "detections_render_data"
+#  input_stream: "VECTOR:0:multi_face_landmarks_render_data"
+#  input_stream: "rects_render_data"
+  output_stream: "IMAGE_GPU:output_image"
+}
+```
