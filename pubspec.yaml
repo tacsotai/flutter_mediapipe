@@ -1,6 +1,6 @@
 name: flutter_mediapipe
-version: 0.0.4
 description: The flutter mediapipe plugin project.
+version: 0.0.5
 homepage: https://github.com/tacsotai/flutter_mediapipe
 
 environment:

@@ -13,3 +13,7 @@
 ## 0.0.4
 
 * Hide rectangles and landmarks.
+
+## 0.0.5
+
+* Hide partial landmarks connections.

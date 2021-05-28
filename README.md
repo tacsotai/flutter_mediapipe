@@ -173,3 +173,27 @@ node {
   output_stream: "IMAGE_GPU:output_image"
 }
 ```
+
+### Calculator
+When editing c++ calculator source, [Build](###Build) again. 
+- c++ source: _jniLibs_
+
+```
+vi mediapipe/graphs/face_mesh/calculators/face_landmarks_to_render_data_calculator.cc
+```
+It is a sample to comment out the lines(31 and 45) for hiding Left eyebrow connections.
+```
+constexpr int kNumFaceLandmarkConnections = 116; // (124 - (16/2))  c.f. l.93
+// Pairs of landmark indices to be rendered with connections.
+constexpr int kFaceLandmarkConnections[] = {
+  :
+    133,
+    // Left eyebrow.
+//    46, 53, 53, 52, 52, 65, 65, 55, 70, 63, 63, 105, 105, 66, 66, 107,
+    // Right eye.
+  :
+  for (int i = 0; i < kNumFaceLandmarkConnections; ++i) {
+    landmark_connections_.push_back(kFaceLandmarkConnections[i * 2]);
+    landmark_connections_.push_back(kFaceLandmarkConnections[i * 2 + 1]);
+  }
+```
