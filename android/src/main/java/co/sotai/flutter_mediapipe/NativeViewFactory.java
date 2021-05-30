@@ -25,6 +25,8 @@ public class NativeViewFactory extends PlatformViewFactory {
   @NonNull
   private final Activity activity;
 
+  private NativeView nativeView;
+
   public NativeViewFactory(BinaryMessenger messenger, Activity activity) {
     super(StandardMessageCodec.INSTANCE);
     this.messenger = messenger;
@@ -36,6 +38,11 @@ public class NativeViewFactory extends PlatformViewFactory {
   @SuppressWarnings("unchecked")
   public PlatformView create(@NonNull Context context, int id, @Nullable Object args) {
     final Map<String, Object> creationParams = (Map<String, Object>) args;
-    return new NativeView(context, id, creationParams, messenger, activity);
+    nativeView = new NativeView(context, id, creationParams, messenger, activity);
+    return nativeView;
+  }
+
+  public NativeView getNativeView(){
+    return nativeView;
   }
 }

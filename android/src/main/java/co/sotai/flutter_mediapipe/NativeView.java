@@ -124,7 +124,7 @@ public class NativeView implements PlatformView, MethodCallHandler {
         eventChannel.setStreamHandler(landMarksStreamHandler());
     }
 
-    private void onResume() {
+    public void onResume() {
         converter = new ExternalTextureConverter(eglManager.getContext());
         converter.setFlipY(FLIP_FRAMES_VERTICALLY);
         converter.setConsumer(processor);
