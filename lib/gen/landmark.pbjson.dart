@@ -32,6 +32,16 @@ const LandmarkList$json = const {
 
 /// Descriptor for `LandmarkList`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List landmarkListDescriptor = $convert.base64Decode('CgxMYW5kbWFya0xpc3QSLwoIbGFuZG1hcmsYASADKAsyEy5tZWRpYXBpcGUuTGFuZG1hcmtSCGxhbmRtYXJr');
+@$core.Deprecated('Use landmarkListsDescriptor instead')
+const LandmarkLists$json = const {
+  '1': 'LandmarkLists',
+  '2': const [
+    const {'1': 'landmarks', '3': 1, '4': 3, '5': 11, '6': '.mediapipe.LandmarkList', '10': 'landmarks'},
+  ],
+};
+
+/// Descriptor for `LandmarkLists`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List landmarkListsDescriptor = $convert.base64Decode('Cg1MYW5kbWFya0xpc3RzEjUKCWxhbmRtYXJrcxgBIAMoCzIXLm1lZGlhcGlwZS5MYW5kbWFya0xpc3RSCWxhbmRtYXJrcw==');
 @$core.Deprecated('Use normalizedLandmarkDescriptor instead')
 const NormalizedLandmark$json = const {
   '1': 'NormalizedLandmark',
@@ -56,3 +66,13 @@ const NormalizedLandmarkList$json = const {
 
 /// Descriptor for `NormalizedLandmarkList`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List normalizedLandmarkListDescriptor = $convert.base64Decode('ChZOb3JtYWxpemVkTGFuZG1hcmtMaXN0EjkKCGxhbmRtYXJrGAEgAygLMh0ubWVkaWFwaXBlLk5vcm1hbGl6ZWRMYW5kbWFya1IIbGFuZG1hcms=');
+@$core.Deprecated('Use normalizedLandmarkListsDescriptor instead')
+const NormalizedLandmarkLists$json = const {
+  '1': 'NormalizedLandmarkLists',
+  '2': const [
+    const {'1': 'landmarks', '3': 1, '4': 3, '5': 11, '6': '.mediapipe.NormalizedLandmarkList', '10': 'landmarks'},
+  ],
+};
+
+/// Descriptor for `NormalizedLandmarkLists`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List normalizedLandmarkListsDescriptor = $convert.base64Decode('ChdOb3JtYWxpemVkTGFuZG1hcmtMaXN0cxI/CglsYW5kbWFya3MYASADKAsyIS5tZWRpYXBpcGUuTm9ybWFsaXplZExhbmRtYXJrTGlzdFIJbGFuZG1hcmtz');

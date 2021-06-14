@@ -153,6 +153,47 @@ class LandmarkList extends $pb.GeneratedMessage {
   $core.List<Landmark> get landmark => $_getList(0);
 }
 
+class LandmarkLists extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'LandmarkLists', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mediapipe'), createEmptyInstance: create)
+    ..pc<LandmarkList>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'landmarks', $pb.PbFieldType.PM, subBuilder: LandmarkList.create)
+    ..hasRequiredFields = false
+  ;
+
+  LandmarkLists._() : super();
+  factory LandmarkLists({
+    $core.Iterable<LandmarkList>? landmarks,
+  }) {
+    final _result = create();
+    if (landmarks != null) {
+      _result.landmarks.addAll(landmarks);
+    }
+    return _result;
+  }
+  factory LandmarkLists.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LandmarkLists.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LandmarkLists clone() => LandmarkLists()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LandmarkLists copyWith(void Function(LandmarkLists) updates) => super.copyWith((message) => updates(message as LandmarkLists)) as LandmarkLists; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static LandmarkLists create() => LandmarkLists._();
+  LandmarkLists createEmptyInstance() => create();
+  static $pb.PbList<LandmarkLists> createRepeated() => $pb.PbList<LandmarkLists>();
+  @$core.pragma('dart2js:noInline')
+  static LandmarkLists getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LandmarkLists>(create);
+  static LandmarkLists? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<LandmarkList> get landmarks => $_getList(0);
+}
+
 class NormalizedLandmark extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NormalizedLandmark', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mediapipe'), createEmptyInstance: create)
     ..a<$core.double>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'x', $pb.PbFieldType.OF)
@@ -295,5 +336,46 @@ class NormalizedLandmarkList extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<NormalizedLandmark> get landmark => $_getList(0);
+}
+
+class NormalizedLandmarkLists extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NormalizedLandmarkLists', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mediapipe'), createEmptyInstance: create)
+    ..pc<NormalizedLandmarkList>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'landmarks', $pb.PbFieldType.PM, subBuilder: NormalizedLandmarkList.create)
+    ..hasRequiredFields = false
+  ;
+
+  NormalizedLandmarkLists._() : super();
+  factory NormalizedLandmarkLists({
+    $core.Iterable<NormalizedLandmarkList>? landmarks,
+  }) {
+    final _result = create();
+    if (landmarks != null) {
+      _result.landmarks.addAll(landmarks);
+    }
+    return _result;
+  }
+  factory NormalizedLandmarkLists.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NormalizedLandmarkLists.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  NormalizedLandmarkLists clone() => NormalizedLandmarkLists()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  NormalizedLandmarkLists copyWith(void Function(NormalizedLandmarkLists) updates) => super.copyWith((message) => updates(message as NormalizedLandmarkLists)) as NormalizedLandmarkLists; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static NormalizedLandmarkLists create() => NormalizedLandmarkLists._();
+  NormalizedLandmarkLists createEmptyInstance() => create();
+  static $pb.PbList<NormalizedLandmarkLists> createRepeated() => $pb.PbList<NormalizedLandmarkLists>();
+  @$core.pragma('dart2js:noInline')
+  static NormalizedLandmarkLists getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NormalizedLandmarkLists>(create);
+  static NormalizedLandmarkLists? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<NormalizedLandmarkList> get landmarks => $_getList(0);
 }
 

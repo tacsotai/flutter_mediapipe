@@ -21,3 +21,7 @@
 ## 0.0.6
 
 * Start Camera after permission granted.
+
+## 0.0.7
+
+* Create extended protocol buffer of landmarks.
