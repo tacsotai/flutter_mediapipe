@@ -20,4 +20,4 @@
 
 ## 0.0.6
 
-Start Camera after permission granted.
+* Start Camera after permission granted.
