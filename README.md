@@ -5,7 +5,7 @@
 ## Devices
 Currently, it runs on below devices with "OK".
 - [OK] [Android](##Android)
-- [NG] [iOS](##iOS)
+- [NG] [iOS](##iOS) Not Implemented, **Help me to develop!**
 
 ## Android
 
@@ -147,7 +147,7 @@ flutter build apk --split-per-abi
 
 
 ## iOS
-Not implemented. Help me to develop.
+Need help to develop. Actually, I don't have enough skill for objective-c and my [m1 mac can't build](https://stackoverflow.com/questions/67660034/how-to-run-mediapipe-with-c-on-m1-mac).
 
 
 ## Custormize mediapipe
